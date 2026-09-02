@@ -2,6 +2,8 @@ node_modules
 .next
 .data
 .env.local
+.env.docker
 coverage
 *.log
 *.tsbuildinfo
+demo/dist

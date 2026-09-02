@@ -85,3 +85,11 @@ npm audit --omit=dev
 The initial implementation deliberately uses a filesystem-backed JSON store and local PDF directory to remain self-contained. This is suitable for a single persistent Node server and pilot installations. Before horizontal scaling or serverless deployment, replace `src/lib/store.ts` with a transactional database adapter and move PDF binaries to object storage. The tenant IDs and service boundaries are already explicit to make that migration straightforward.
 
 See [the product plan](docs/project-plan.md) and [implementation architecture](docs/architecture.md) for details.
+
+## Deployment
+
+- Build and run the full platform with `docker compose --env-file .env.docker up --build -d`.
+- Mount `/app/.data` persistently on a public container host.
+- Deploy the independent `demo/` directory to Netlify with `WEBPLUG_ORIGIN` pointing to that public platform.
+
+See the [deployment guide](docs/deployment.md) for the complete Docker and Netlify setup.
