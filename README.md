@@ -93,3 +93,5 @@ See [the product plan](docs/project-plan.md) and [implementation architecture](d
 - Deploy the independent `demo/` directory to Netlify with `WEBPLUG_ORIGIN` pointing to that public platform.
 
 See the [deployment guide](docs/deployment.md) for the complete Docker and Netlify setup.
+
+The agreed production topology and server handoff checklist are documented in [the production deployment plan](docs/production-deployment-plan.md).

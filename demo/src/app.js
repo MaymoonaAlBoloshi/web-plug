@@ -21,13 +21,3 @@ function setLanguage(next) {
   window.dispatchEvent(new CustomEvent("webplug:language", { detail: { language: next } }));
 }
 document.getElementById("language").addEventListener("click", () => setLanguage(language === "en" ? "ar" : "en"));
-
-function loadEmbed(path, attribute, value) {
-  const script = document.createElement("script");
-  script.src = `${window.WEBPLUG_ORIGIN}${path}`;
-  script.setAttribute(attribute, value);
-  script.defer = true;
-  document.body.appendChild(script);
-}
-loadEmbed("/widget.js", "data-bot", "northstar");
-loadEmbed("/accessibility.js", "data-site", "northstar");

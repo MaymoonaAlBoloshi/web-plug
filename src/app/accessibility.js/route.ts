@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
-  const origin = new URL(request.url).origin;
+  const origin = (process.env.NEXT_PUBLIC_APP_URL || new URL(request.url).origin).replace(/\/$/, "");
   const script = `(function(){
 var current=document.currentScript,slug=current&&current.getAttribute('data-site');
 if(!slug||document.getElementById('webplug-accessibility-host'))return;

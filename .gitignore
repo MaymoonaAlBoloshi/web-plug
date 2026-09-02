@@ -7,3 +7,6 @@ coverage
 *.log
 *.tsbuildinfo
 demo/dist
+
+# Local Netlify folder
+.netlify
